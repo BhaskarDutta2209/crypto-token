@@ -19,10 +19,10 @@
  */
 
 const HDWalletProvider = require('@truffle/hdwallet-provider');
-const infuraKey = "ccf400296ac04414bcabe5a9cfd73b2a";
-//
+
 const fs = require('fs');
 const mnemonic = fs.readFileSync(".secret").toString().trim();
+const infuraKey = fs.readFileSync(".infurakey").toString().trim();
 
 module.exports = {
   /**
@@ -73,7 +73,7 @@ module.exports = {
     // production: true    // Treats this network as if it was a public net. (default: false)
     // }
     kovan: {
-      provider: () => new HDWalletProvider(mnemonic, `https://kovan.infura.io/v3/c5a798dfd7184a27990ed8744003cc61`),
+      provider: () => new HDWalletProvider(mnemonic, `https://kovan.infura.io/v3/${infuraKey}`),
       network_id: 42,       // Ropsten's id
       gas: 5500000,        // Ropsten has a lower block limit than mainnet
       confirmations: 2,    // # of confs to wait between deployments. (default: 0)
