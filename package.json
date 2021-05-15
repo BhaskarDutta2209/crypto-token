@@ -12,6 +12,10 @@
   "author": "BhaskarDutta2209",
   "license": "ISC",
   "devDependencies": {
-    "openzeppelin-solidity": "^4.1.0"
+    "web3": "^1.3.6"
+  },
+  "dependencies": {
+    "@openzeppelin/contracts": "^4.1.0",
+    "@truffle/hdwallet-provider": "^1.4.0"
   }
 }
